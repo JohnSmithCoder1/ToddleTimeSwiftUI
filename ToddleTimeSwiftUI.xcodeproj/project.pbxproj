@@ -9,21 +9,35 @@
 /* Begin PBXBuildFile section */
 		051B58792634B643009FBA44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B58782634B643009FBA44 /* AppDelegate.swift */; };
 		051B587B2634B643009FBA44 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B587A2634B643009FBA44 /* SceneDelegate.swift */; };
-		051B587D2634B643009FBA44 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B587C2634B643009FBA44 /* ContentView.swift */; };
 		051B587F2634B645009FBA44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 051B587E2634B645009FBA44 /* Assets.xcassets */; };
 		051B58822634B645009FBA44 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 051B58812634B645009FBA44 /* Preview Assets.xcassets */; };
 		051B58852634B645009FBA44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 051B58832634B645009FBA44 /* LaunchScreen.storyboard */; };
+		051B588E2634B750009FBA44 /* Array+Only.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B588D2634B750009FBA44 /* Array+Only.swift */; };
+		051B58912634B7D3009FBA44 /* Array+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B58902634B7D3009FBA44 /* Array+Identifiable.swift */; };
+		051B58942634B87E009FBA44 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B58932634B87E009FBA44 /* Cardify.swift */; };
+		051B58972634B944009FBA44 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B58962634B944009FBA44 /* Grid.swift */; };
+		051B589A2634B97E009FBA44 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B58992634B97E009FBA44 /* GridLayout.swift */; };
+		051B589D2634BA7E009FBA44 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B589C2634BA7E009FBA44 /* MemoryGame.swift */; };
+		051B58A12634BEAA009FBA44 /* ToddleTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B58A02634BEAA009FBA44 /* ToddleTime.swift */; };
+		051B58A72634C44E009FBA44 /* ToddleTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B58A62634C44E009FBA44 /* ToddleTimeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		051B58752634B643009FBA44 /* ToddleTimeSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToddleTimeSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		051B58782634B643009FBA44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		051B587A2634B643009FBA44 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		051B587C2634B643009FBA44 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		051B587E2634B645009FBA44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		051B58812634B645009FBA44 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		051B58842634B645009FBA44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		051B58862634B645009FBA44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		051B588D2634B750009FBA44 /* Array+Only.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Only.swift"; sourceTree = "<group>"; };
+		051B58902634B7D3009FBA44 /* Array+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
+		051B58932634B87E009FBA44 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
+		051B58962634B944009FBA44 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		051B58992634B97E009FBA44 /* GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
+		051B589C2634BA7E009FBA44 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
+		051B58A02634BEAA009FBA44 /* ToddleTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToddleTime.swift; sourceTree = "<group>"; };
+		051B58A62634C44E009FBA44 /* ToddleTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToddleTimeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +71,19 @@
 			isa = PBXGroup;
 			children = (
 				051B58782634B643009FBA44 /* AppDelegate.swift */,
-				051B587A2634B643009FBA44 /* SceneDelegate.swift */,
-				051B587C2634B643009FBA44 /* ContentView.swift */,
+				051B58902634B7D3009FBA44 /* Array+Identifiable.swift */,
+				051B588D2634B750009FBA44 /* Array+Only.swift */,
 				051B587E2634B645009FBA44 /* Assets.xcassets */,
-				051B58832634B645009FBA44 /* LaunchScreen.storyboard */,
+				051B58932634B87E009FBA44 /* Cardify.swift */,
+				051B58962634B944009FBA44 /* Grid.swift */,
+				051B58992634B97E009FBA44 /* GridLayout.swift */,
 				051B58862634B645009FBA44 /* Info.plist */,
+				051B58832634B645009FBA44 /* LaunchScreen.storyboard */,
+				051B589C2634BA7E009FBA44 /* MemoryGame.swift */,
 				051B58802634B645009FBA44 /* Preview Content */,
+				051B587A2634B643009FBA44 /* SceneDelegate.swift */,
+				051B58A62634C44E009FBA44 /* ToddleTimeView.swift */,
+				051B58A02634BEAA009FBA44 /* ToddleTime.swift */,
 			);
 			path = ToddleTimeSwiftUI;
 			sourceTree = "<group>";
@@ -145,9 +166,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				051B58942634B87E009FBA44 /* Cardify.swift in Sources */,
+				051B58912634B7D3009FBA44 /* Array+Identifiable.swift in Sources */,
 				051B58792634B643009FBA44 /* AppDelegate.swift in Sources */,
 				051B587B2634B643009FBA44 /* SceneDelegate.swift in Sources */,
-				051B587D2634B643009FBA44 /* ContentView.swift in Sources */,
+				051B58972634B944009FBA44 /* Grid.swift in Sources */,
+				051B588E2634B750009FBA44 /* Array+Only.swift in Sources */,
+				051B589A2634B97E009FBA44 /* GridLayout.swift in Sources */,
+				051B58A72634C44E009FBA44 /* ToddleTimeView.swift in Sources */,
+				051B58A12634BEAA009FBA44 /* ToddleTime.swift in Sources */,
+				051B589D2634BA7E009FBA44 /* MemoryGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
