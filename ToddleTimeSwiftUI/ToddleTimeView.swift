@@ -46,8 +46,9 @@ struct CardView: View {
     private func body(for size: CGSize) -> some View {
         if card.isFaceUp || !card.isMatched {
             ZStack {
-                Text(card.content)
-                    .font(Font.system(size: fontSize(for: size)))
+                card.content
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
             }
             .cardify(isFaceUp: card.isFaceUp)
             .transition(AnyTransition.opacity) // animation for clearing matched cards
