@@ -26,8 +26,9 @@ struct Cardify: AnimatableModifier {
     func body(content: Content) -> some View {
         ZStack {
             Group {
-                RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white)
                 RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth)
+                RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white)
+
                 content
             }
             .opacity(isFaceUp ? 1 : 0)
