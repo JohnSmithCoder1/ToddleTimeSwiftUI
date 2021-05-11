@@ -11,10 +11,17 @@ class ToddleTime: ObservableObject {
     @Published private var model: MemoryGame<Image> = ToddleTime.createMemoryGame()
     
     private static func createMemoryGame() -> MemoryGame<Image> {
-        let images = [Image("cowImageLarge"), Image("dogImageLarge"), Image("chickenImageLarge"), Image("pigImageLarge"), Image("horseImageLarge"), Image("catImageLarge")]
+        let animalImages = [Image("cowImageLarge"), Image("dogImageLarge"), Image("chickenImageLarge"), Image("pigImageLarge"), Image("horseImageLarge"), Image("catImageLarge")]
         
-        return MemoryGame<Image>(numberOfPairsOfCards: images.count) { pairIndex in
-            return images[pairIndex]
+        let foodImages = [Image("appleImageLarge"), Image("bananaImageLarge"), Image("broccoliImageLarge"), Image("carrotImageLarge"), Image("pepperImageLarge"), Image("strawberryImageLarge")]
+        
+        let shapeImages = [Image("circleImageLarge"), Image("squareImageLarge"), Image("triangleImageLarge"), Image("starImageLarge"), Image("diamondImageLarge"), Image("heartImageLarge")]
+        
+//        let selectedImages = animalImages
+        let selectedImages = [animalImages, foodImages, shapeImages].randomElement()!
+        
+        return MemoryGame<Image>(numberOfPairsOfCards: selectedImages.count) { pairIndex in
+            return selectedImages[pairIndex]
         }
     }
     

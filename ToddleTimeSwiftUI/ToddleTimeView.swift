@@ -54,12 +54,6 @@ struct CardView: View {
             .transition(AnyTransition.opacity) // animation for clearing matched cards
         }
     }
-    
-    // MARK: - Drawing Constants
-    
-    func fontSize(for size: CGSize) -> CGFloat {
-        min(size.width, size.height) * 0.75
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
