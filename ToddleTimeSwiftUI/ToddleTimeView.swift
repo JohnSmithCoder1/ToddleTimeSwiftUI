@@ -23,11 +23,26 @@ struct ToddleTimeView: View {
             .padding()
             .foregroundColor(Color.purple)
             
-            Button {
-                withAnimation(.easeInOut) {
+            HStack {
+                Button(action: {
                     self.viewModel.resetGame()
+                }) {
+                    Image(systemName: "gearshape")
                 }
-            } label: { Text("New Game") }
+                .padding(.leading)
+                
+                Spacer()
+                
+                Button(action: {
+                    withAnimation(.easeInOut) {
+                        self.viewModel.resetGame()
+                    }
+                }) {
+                    Image(systemName: "arrow.clockwise.circle")
+                }
+                .padding(.trailing)
+            }
+            .font(.system(.largeTitle))
             .foregroundColor(Color.purple)
         }
     }
