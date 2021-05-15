@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ToddleTimeView: View {
     @ObservedObject var viewModel: ToddleTime
+    @State private var isPresented = false
     
     var body: some View {
         VStack {
@@ -25,11 +26,12 @@ struct ToddleTimeView: View {
             
             HStack {
                 Button(action: {
-                    self.viewModel.resetGame()
+                    self.isPresented.toggle()
                 }) {
                     Image(systemName: "gearshape")
                 }
                 .padding(.leading)
+                .fullScreenCover(isPresented: $isPresented, content: SettingsView.init)
                 
                 Spacer()
                 
@@ -67,6 +69,24 @@ struct CardView: View {
             }
             .cardify(isFaceUp: card.isFaceUp)
             .transition(AnyTransition.opacity) // animation for clearing matched cards
+        }
+    }
+}
+
+struct SettingsView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
+    var body: some View {
+        VStack {
+            Text("Settings")
+            
+            Spacer()
+            
+            Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                Image(systemName: "checkmark.circle")
+            }
         }
     }
 }
