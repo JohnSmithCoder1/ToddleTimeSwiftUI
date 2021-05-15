@@ -22,7 +22,7 @@ struct ToddleTimeView: View {
                 .padding(5)
             }
             .padding()
-            .foregroundColor(Color.purple)
+            .foregroundColor(.purple)
             
             HStack {
                 Button(action: {
@@ -45,7 +45,7 @@ struct ToddleTimeView: View {
                 .padding(.trailing)
             }
             .font(.system(.largeTitle))
-            .foregroundColor(Color.purple)
+            .foregroundColor(.purple)
         }
     }
 }
@@ -75,10 +75,50 @@ struct CardView: View {
 
 struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
+    @State private var cards = 2
+    @State private var content = 3
+    @State private var color = 3
+    @State private var isSoundOn = true
     
     var body: some View {
         VStack {
-            Text("Settings")
+            Spacer()
+            
+            Group {
+                Text("Cards")
+                Picker(selection: $cards, label: Text("Cards")) {
+                    Text("6").tag(0)
+                    Text("10").tag(1)
+                    Text("12").tag(2)
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding()
+                
+                Text("Content")
+                Picker(selection: $content, label: Text("Content")) {
+                    Text("Animals").tag(0)
+                    Text("Foods").tag(1)
+                    Text("Shapes").tag(2)
+                    Text("Random").tag(3)
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding()
+                
+                
+                Text("Color")
+                Picker(selection: $color, label: Text("Color")) {
+                    Text("Yellow").tag(0)
+                    Text("Red").tag(1)
+                    Text("Blue").tag(2)
+                    Text("Purple").tag(3)
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding()
+                
+                Toggle("Sound", isOn: $isSoundOn)
+                    .toggleStyle(SwitchToggleStyle(tint: .purple))
+                    .padding()
+            }
             
             Spacer()
             
