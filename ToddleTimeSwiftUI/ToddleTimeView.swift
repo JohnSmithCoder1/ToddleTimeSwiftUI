@@ -75,7 +75,7 @@ struct CardView: View {
 
 struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
-    @State private var cards = 2
+    @State private var cards = 3
     @State private var content = 3
     @State private var color = 3
     @State private var isSoundOn = true
@@ -88,8 +88,9 @@ struct SettingsView: View {
                 Text("Cards")
                 Picker(selection: $cards, label: Text("Cards")) {
                     Text("6").tag(0)
-                    Text("10").tag(1)
-                    Text("12").tag(2)
+                    Text("8").tag(1)
+                    Text("10").tag(2)
+                    Text("12").tag(3)
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .padding()
