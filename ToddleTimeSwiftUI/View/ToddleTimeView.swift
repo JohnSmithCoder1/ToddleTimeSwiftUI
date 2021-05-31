@@ -32,7 +32,7 @@ struct ToddleTimeView: View {
                     Image(systemName: "gearshape")
                 }
                 .padding(.leading)
-                .fullScreenCover(isPresented: $isPresented, content: SettingsView.init)
+                .fullScreenCover(isPresented: $isPresented, onDismiss: { viewModel.resetGame() }, content: SettingsView.init)
                 
                 Spacer()
                 
