@@ -10,6 +10,7 @@ import SwiftUI
 struct ToddleTimeView: View {
     @ObservedObject var viewModel: ToddleTime
     @State private var isPresented = false
+    let cardColors = [Color.purple, Color.red, Color.blue, Color.yellow]
     
     var body: some View {
         VStack {
@@ -22,8 +23,8 @@ struct ToddleTimeView: View {
                 .padding(5)
             }
             .padding()
-            .foregroundColor(.purple)
-            
+            .foregroundColor(cardColors[UserDefaults.standard.integer(forKey: "color")])
+                        
             HStack {
                 Button(action: {
                     self.isPresented.toggle()
@@ -45,7 +46,7 @@ struct ToddleTimeView: View {
                 .padding(.trailing)
             }
             .font(.system(.largeTitle))
-            .foregroundColor(.purple)
+            .foregroundColor(cardColors[UserDefaults.standard.integer(forKey: "color")])
         }
     }
 }
@@ -74,50 +75,64 @@ struct CardView: View {
 }
 
 struct SettingsView: View {
-    @Environment(\.presentationMode) var presentationMode
-    @State private var cards = 3
-    @State private var content = 3
-    @State private var color = 3
-    @State private var isSoundOn = true
+    #warning("add viewModel instance to reset game when options changed?")
     
+    @Environment(\.presentationMode) var presentationMode
+    
+    @State private var selectedNumberOfCardPairsIndex = UserDefaults.standard.integer(forKey: "cardPairs")
+    @State private var selectedCardImagesIndex = UserDefaults.standard.integer(forKey: "cardImages")
+    @State private var selectedColorIndex = UserDefaults.standard.integer(forKey: "color")
+    @State private var isSoundOn = UserDefaults.standard.bool(forKey: "isSoundOn")
+        
     var body: some View {
         VStack {
             Spacer()
             
             Group {
                 Text("Cards")
-                Picker(selection: $cards, label: Text("Cards")) {
+                Picker(selection: $selectedNumberOfCardPairsIndex, label: Text("Cards")) {
                     Text("6").tag(0)
                     Text("8").tag(1)
                     Text("10").tag(2)
                     Text("12").tag(3)
                 }
+                .onChange(of: selectedNumberOfCardPairsIndex, perform: { (value) in
+                    UserDefaults.standard.set(value, forKey: "cardPairs")
+                })
                 .pickerStyle(SegmentedPickerStyle())
                 .padding()
                 
                 Text("Content")
-                Picker(selection: $content, label: Text("Content")) {
+                Picker(selection: $selectedCardImagesIndex, label: Text("Content")) {
                     Text("Animals").tag(0)
                     Text("Foods").tag(1)
                     Text("Shapes").tag(2)
                     Text("Random").tag(3)
                 }
+                .onChange(of: selectedCardImagesIndex, perform: { (value) in
+                    UserDefaults.standard.set(value, forKey: "cardImages")
+                })
                 .pickerStyle(SegmentedPickerStyle())
                 .padding()
                 
                 
                 Text("Color")
-                Picker(selection: $color, label: Text("Color")) {
-                    Text("Yellow").tag(0)
+                Picker(selection: $selectedColorIndex, label: Text("Color")) {
+                    Text("Purple").tag(0)
                     Text("Red").tag(1)
                     Text("Blue").tag(2)
-                    Text("Purple").tag(3)
+                    Text("Yellow").tag(3)
                 }
+                .onChange(of: selectedColorIndex, perform: { (value) in
+                    UserDefaults.standard.set(value, forKey: "color")
+                })
                 .pickerStyle(SegmentedPickerStyle())
                 .padding()
                 
                 Toggle("Sound", isOn: $isSoundOn)
-                    .toggleStyle(SwitchToggleStyle(tint: .purple))
+                    .onChange(of: isSoundOn, perform: { (value) in
+                        UserDefaults.standard.set(value, forKey: "isSoundOn")
+                    })
                     .padding()
             }
             
