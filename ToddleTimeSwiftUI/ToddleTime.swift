@@ -6,22 +6,43 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 class ToddleTime: ObservableObject {
     @Published private var model: MemoryGame<Image> = ToddleTime.createMemoryGame()
-    
+    var audioPlayer: AVAudioPlayer?
+        
     private static func createMemoryGame() -> MemoryGame<Image> {
+        // Cards
+        let numberOfCardPairs = [3, 4, 5, 6]
+        
+        // Content
         let animalImages = [Image("cowImageLarge"), Image("dogImageLarge"), Image("chickenImageLarge"), Image("pigImageLarge"), Image("horseImageLarge"), Image("catImageLarge")]
         
         let foodImages = [Image("appleImageLarge"), Image("bananaImageLarge"), Image("broccoliImageLarge"), Image("carrotImageLarge"), Image("pepperImageLarge"), Image("strawberryImageLarge")]
         
         let shapeImages = [Image("circleImageLarge"), Image("squareImageLarge"), Image("triangleImageLarge"), Image("starImageLarge"), Image("diamondImageLarge"), Image("heartImageLarge")]
         
-//        let selectedImages = animalImages
-        let selectedImages = [animalImages, foodImages, shapeImages].randomElement()!
+        let allImages = [Image("cowImageLarge"), Image("dogImageLarge"), Image("chickenImageLarge"), Image("pigImageLarge"), Image("horseImageLarge"), Image("catImageLarge"), Image("appleImageLarge"), Image("bananaImageLarge"), Image("broccoliImageLarge"), Image("carrotImageLarge"), Image("pepperImageLarge"), Image("strawberryImageLarge"), Image("circleImageLarge"), Image("squareImageLarge"), Image("triangleImageLarge"), Image("starImageLarge"), Image("diamondImageLarge"), Image("heartImageLarge")].shuffled()
         
-        return MemoryGame<Image>(numberOfPairsOfCards: selectedImages.count) { pairIndex in
-            return selectedImages[pairIndex]
+        let cardImageSets = [animalImages, foodImages, shapeImages, allImages]
+        
+        return MemoryGame<Image>(numberOfPairsOfCards: numberOfCardPairs[UserDefaults.standard.integer(forKey: "cardPairs")]) { pairIndex in
+            return cardImageSets[UserDefaults.standard.integer(forKey: "cardImages")][pairIndex]
+        }
+    }
+    
+    func playSound(_ soundFile: String) {
+        if UserDefaults.standard.bool(forKey: "isSoundOn") {
+            guard let path = Bundle.main.url(forResource: soundFile, withExtension: "wav") else { return }
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: path)
+                guard let audioPlayer = audioPlayer else { return }
+                audioPlayer.prepareToPlay()
+                audioPlayer.play()
+            } catch let error as NSError {
+                print("error: \(error.localizedDescription)")
+            }
         }
     }
     
@@ -35,9 +56,11 @@ class ToddleTime: ObservableObject {
     
     func choose(card: MemoryGame<Image>.Card) {
         model.choose(card: card)
+        playSound("flipCard")
     }
     
     func resetGame() {
         model = ToddleTime.createMemoryGame()
+        playSound("shuffleCards")
     }
 }
