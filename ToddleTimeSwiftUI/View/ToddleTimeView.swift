@@ -141,6 +141,7 @@ struct SettingsView: View {
             }) {
                 Image(systemName: "checkmark.circle")
             }
+            .foregroundColor(Color.green)
         }
     }
 }
