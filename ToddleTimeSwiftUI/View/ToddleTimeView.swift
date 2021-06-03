@@ -75,14 +75,12 @@ struct CardView: View {
 }
 
 struct SettingsView: View {
-    #warning("add viewModel instance to reset game when options changed?")
-    
     @Environment(\.presentationMode) var presentationMode
     
     @State private var selectedNumberOfCardPairsIndex = UserDefaults.standard.integer(forKey: "cardPairs")
     @State private var selectedCardImagesIndex = UserDefaults.standard.integer(forKey: "cardImages")
     @State private var selectedColorIndex = UserDefaults.standard.integer(forKey: "color")
-    @State private var isSoundOn = UserDefaults.standard.bool(forKey: "isSoundOn")
+    @State private var isSoundOn = UserDefaults.standard.object(forKey: "isSoundOn") as? Bool ?? true
         
     var body: some View {
         VStack {
