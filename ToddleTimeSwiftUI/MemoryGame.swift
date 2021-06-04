@@ -42,7 +42,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
                     cards[chosenIndex].isMatched = true
                     cards[potentialMatchIndex].isMatched = true
                     
-                    #warning("change this to card match sound")
+                    #warning("change this to card content sound")
                     playSound("bananaSound")
                 }
                 
