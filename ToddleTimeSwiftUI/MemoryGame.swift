@@ -12,6 +12,8 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     
     private(set) var cards: [Card]
     var audioPlayer: AVAudioPlayer?
+    var cardPairsNeededToWin: Int
+    
     
     var indexOfOnlyFaceUpCard: Int? {
         get { cards.indices.filter { cards[$0].isFaceUp }.only }
@@ -25,6 +27,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     
     init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) {
         cards = [Card]()
+        cardPairsNeededToWin = numberOfPairsOfCards
         
         for pairIndex in 0..<numberOfPairsOfCards {
             let content = cardContentFactory(pairIndex)
@@ -36,13 +39,18 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     }
     
     mutating func choose(card: Card) {
-        if let chosenIndex = cards.firstIndex(matching: card), !cards[chosenIndex].isFaceUp, !cards[chosenIndex].isMatched {
+         if let chosenIndex = cards.firstIndex(matching: card), !cards[chosenIndex].isFaceUp, !cards[chosenIndex].isMatched {
             if let potentialMatchIndex = indexOfOnlyFaceUpCard {
                 if cards[chosenIndex].content == cards[potentialMatchIndex].content {
                     cards[chosenIndex].isMatched = true
                     cards[potentialMatchIndex].isMatched = true
+                    cardPairsNeededToWin -= 1
                     
-                    playSound("cardMatchPlaceholder", withDelay: .now() + 0.32)
+                    if cardPairsNeededToWin == 0 {
+                        playSound("gameCompletePlaceholder", withDelay: .now() + 0.32)
+                    } else {
+                        playSound("cardMatchPlaceholder", withDelay: .now() + 0.32)
+                    }
                 }
                 
                 self.cards[chosenIndex].isFaceUp = true
