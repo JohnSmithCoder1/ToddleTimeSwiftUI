@@ -42,7 +42,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
                     cards[chosenIndex].isMatched = true
                     cards[potentialMatchIndex].isMatched = true
                     
-                    playSound("cardMatchPlaceholder", withDelay: .now() + 0.28)
+                    playSound("cardMatchPlaceholder", withDelay: .now() + 0.29)
                 }
                 
                 self.cards[chosenIndex].isFaceUp = true
