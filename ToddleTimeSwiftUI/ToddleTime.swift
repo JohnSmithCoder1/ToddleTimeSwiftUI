@@ -56,7 +56,12 @@ class ToddleTime: ObservableObject {
     
     func choose(card: MemoryGame<Image>.Card) {
         model.choose(card: card)
-        playSound("flipCard")
+        
+        // Play card flip sound on card tap unless all cards are matched
+        if !card.isMatched {
+            playSound("flipCard")
+        }
+        
     }
     
     func resetGame() {
