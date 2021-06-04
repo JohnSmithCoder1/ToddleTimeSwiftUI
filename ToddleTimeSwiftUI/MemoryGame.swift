@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import AVFoundation
 
 struct MemoryGame<CardContent> where CardContent: Equatable {
     
     private(set) var cards: [Card]
+    var audioPlayer: AVAudioPlayer?
     
     var indexOfOnlyFaceUpCard: Int? {
         get { cards.indices.filter { cards[$0].isFaceUp }.only }
@@ -39,11 +41,28 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
                 if cards[chosenIndex].content == cards[potentialMatchIndex].content {
                     cards[chosenIndex].isMatched = true
                     cards[potentialMatchIndex].isMatched = true
+                    
+                    #warning("change this to card match sound")
+                    playSound("bananaSound")
                 }
                 
                 self.cards[chosenIndex].isFaceUp = true
             } else {
                 indexOfOnlyFaceUpCard = chosenIndex
+            }
+        }
+    }
+    
+    mutating func playSound(_ soundFile: String) {
+        if UserDefaults.standard.bool(forKey: "isSoundOn") {
+            guard let path = Bundle.main.url(forResource: soundFile, withExtension: "wav") else { return }
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: path)
+                guard let audioPlayer = audioPlayer else { return }
+                audioPlayer.prepareToPlay()
+                audioPlayer.play()
+            } catch let error as NSError {
+                print("error: \(error.localizedDescription)")
             }
         }
     }
