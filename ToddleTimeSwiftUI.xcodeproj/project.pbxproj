@@ -21,6 +21,7 @@
 		051B58A12634BEAA009FBA44 /* ToddleTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B58A02634BEAA009FBA44 /* ToddleTime.swift */; };
 		051B58A72634C44E009FBA44 /* ToddleTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B58A62634C44E009FBA44 /* ToddleTimeView.swift */; };
 		05B487F42669D84B0035227B /* cardMatchPlaceholder.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05B487F32669D84B0035227B /* cardMatchPlaceholder.wav */; };
+		05B487F62669E0D50035227B /* gameCompletePlaceholder.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05B487F52669E0D50035227B /* gameCompletePlaceholder.wav */; };
 		05CA67FE26518870003B83CD /* bananaSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05CA67E026518870003B83CD /* bananaSound.wav */; };
 		05CA67FF26518870003B83CD /* strawberrySound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05CA67E126518870003B83CD /* strawberrySound.wav */; };
 		05CA680026518870003B83CD /* pepperSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05CA67E226518870003B83CD /* pepperSound.wav */; };
@@ -66,6 +67,7 @@
 		051B58A02634BEAA009FBA44 /* ToddleTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToddleTime.swift; sourceTree = "<group>"; };
 		051B58A62634C44E009FBA44 /* ToddleTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToddleTimeView.swift; sourceTree = "<group>"; };
 		05B487F32669D84B0035227B /* cardMatchPlaceholder.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardMatchPlaceholder.wav; sourceTree = "<group>"; };
+		05B487F52669E0D50035227B /* gameCompletePlaceholder.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameCompletePlaceholder.wav; sourceTree = "<group>"; };
 		05CA67E026518870003B83CD /* bananaSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bananaSound.wav; sourceTree = "<group>"; };
 		05CA67E126518870003B83CD /* strawberrySound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = strawberrySound.wav; sourceTree = "<group>"; };
 		05CA67E226518870003B83CD /* pepperSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pepperSound.wav; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				05B487F32669D84B0035227B /* cardMatchPlaceholder.wav */,
+				05B487F52669E0D50035227B /* gameCompletePlaceholder.wav */,
 				05CA67F626518870003B83CD /* shuffleCards.wav */,
 				05CA67F526518870003B83CD /* flipCard.wav */,
 				05CA67EE26518870003B83CD /* Farm Sounds */,
@@ -312,6 +315,7 @@
 				05CA680026518870003B83CD /* pepperSound.wav in Resources */,
 				05CA681126518870003B83CD /* flipCard.wav in Resources */,
 				05CA67FE26518870003B83CD /* bananaSound.wav in Resources */,
+				05B487F62669E0D50035227B /* gameCompletePlaceholder.wav in Resources */,
 				05CA680B26518870003B83CD /* cowSound.wav in Resources */,
 				05CA680726518870003B83CD /* squareSound.wav in Resources */,
 				05CA680126518870003B83CD /* broccoliSound.wav in Resources */,
