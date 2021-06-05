@@ -87,12 +87,10 @@ struct SettingsView: View {
     @State private var selectedCardImagesIndex = UserDefaults.standard.integer(forKey: "cardImages")
     @State private var selectedColorIndex = UserDefaults.standard.integer(forKey: "color")
     @State private var isSoundOn = UserDefaults.standard.object(forKey: "isSoundOn") as? Bool ?? true
-    
-    let backgroundColors = [Color(#colorLiteral(red: 0.1921568627, green: 0.6392156863, blue: 0.2549019608, alpha: 1)), Color(#colorLiteral(red: 0.003921568627, green: 0.462745098, blue: 0.7647058824, alpha: 1)), Color(#colorLiteral(red: 1, green: 0.8235294118, blue: 0.01176470588, alpha: 1)), Color(#colorLiteral(red: 0.9254901961, green: 0.1098039216, blue: 0.1411764706, alpha: 1))]
-        
+            
     var body: some View {
         ZStack {
-            backgroundColors[UserDefaults.standard.integer(forKey: "color")]
+            Color(#colorLiteral(red: 0.003921568627, green: 0.462745098, blue: 0.7647058824, alpha: 1))
                 .ignoresSafeArea()
             
             VStack {
@@ -155,7 +153,7 @@ struct SettingsView: View {
                     Image(systemName: "checkmark.circle")
                         .imageScale(.large)
                 }
-                .foregroundColor(Color.white)
+                .foregroundColor(Color.green)
             }
         }
     }
