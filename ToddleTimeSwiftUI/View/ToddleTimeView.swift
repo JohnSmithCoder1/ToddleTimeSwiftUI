@@ -50,8 +50,8 @@ struct ToddleTimeView: View {
                     }
                     .padding(.trailing)
                 }
-                .font(.system(.largeTitle))
-                .foregroundColor(Color.white)
+                .font(.system(.largeTitle).weight(.semibold))
+                .foregroundColor(cardColors[UserDefaults.standard.integer(forKey: "color")])
             }
         }
     }
