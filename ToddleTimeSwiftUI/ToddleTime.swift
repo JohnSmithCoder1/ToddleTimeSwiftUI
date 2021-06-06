@@ -61,7 +61,6 @@ class ToddleTime: ObservableObject {
         if !card.isFaceUp {
             playSound("flipCard")
         }
-        
     }
     
     func resetGame() {
