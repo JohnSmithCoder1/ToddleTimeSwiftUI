@@ -75,7 +75,7 @@ struct CardView: View {
                     .aspectRatio(contentMode: .fit)
             }
             .cardify(isFaceUp: card.isFaceUp)
-            .transition(AnyTransition.opacity) // animation for clearing matched cards
+            .transition(.scale) // animation for clearing matched cards
         }
     }
 }
