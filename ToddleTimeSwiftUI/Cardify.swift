@@ -48,4 +48,3 @@ extension View {
         self.modifier(Cardify(isFaceUp: isFaceUp))
     }
 }
-

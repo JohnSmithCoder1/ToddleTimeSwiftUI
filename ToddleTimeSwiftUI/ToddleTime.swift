@@ -17,11 +17,11 @@ class ToddleTime: ObservableObject {
         let numberOfCardPairs = [3, 4, 5, 6]
         
         // Content
-        let animalImages = [Image("cowImageLarge"), Image("dogImageLarge"), Image("chickenImageLarge"), Image("pigImageLarge"), Image("horseImageLarge"), Image("catImageLarge")]
+        let animalImages = [Image("cowImageLarge"), Image("dogImageLarge"), Image("chickenImageLarge"), Image("pigImageLarge"), Image("horseImageLarge"), Image("catImageLarge")].shuffled()
         
-        let foodImages = [Image("appleImageLarge"), Image("bananaImageLarge"), Image("broccoliImageLarge"), Image("carrotImageLarge"), Image("pepperImageLarge"), Image("strawberryImageLarge")]
+        let foodImages = [Image("appleImageLarge"), Image("bananaImageLarge"), Image("broccoliImageLarge"), Image("carrotImageLarge"), Image("pepperImageLarge"), Image("strawberryImageLarge")].shuffled()
         
-        let shapeImages = [Image("circleImageLarge"), Image("squareImageLarge"), Image("triangleImageLarge"), Image("starImageLarge"), Image("diamondImageLarge"), Image("heartImageLarge")]
+        let shapeImages = [Image("circleImageLarge"), Image("squareImageLarge"), Image("triangleImageLarge"), Image("starImageLarge"), Image("diamondImageLarge"), Image("heartImageLarge")].shuffled()
         
         let allImages = [Image("cowImageLarge"), Image("dogImageLarge"), Image("chickenImageLarge"), Image("pigImageLarge"), Image("horseImageLarge"), Image("catImageLarge"), Image("appleImageLarge"), Image("bananaImageLarge"), Image("broccoliImageLarge"), Image("carrotImageLarge"), Image("pepperImageLarge"), Image("strawberryImageLarge"), Image("circleImageLarge"), Image("squareImageLarge"), Image("triangleImageLarge"), Image("starImageLarge"), Image("diamondImageLarge"), Image("heartImageLarge")].shuffled()
         
@@ -56,7 +56,10 @@ class ToddleTime: ObservableObject {
     
     func choose(card: MemoryGame<Image>.Card) {
         model.choose(card: card)
-        playSound("flipCard")
+        
+        if !card.isFaceUp {
+            playSound("flipCard")
+        }
     }
     
     func resetGame() {
