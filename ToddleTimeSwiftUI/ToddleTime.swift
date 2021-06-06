@@ -57,7 +57,6 @@ class ToddleTime: ObservableObject {
     func choose(card: MemoryGame<Image>.Card) {
         model.choose(card: card)
         
-        // only play card flip sound if card is face down
         if !card.isFaceUp {
             playSound("flipCard")
         }

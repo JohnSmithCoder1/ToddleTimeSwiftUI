@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ToddleTimeView: View {
-    @ObservedObject var viewModel: ToddleTime
+    @ObservedObject var game: ToddleTime
     @State private var isPresented = false
     let cardColors = [Color(#colorLiteral(red: 1, green: 0.8235294118, blue: 0.01176470588, alpha: 1)), Color(#colorLiteral(red: 0.9254901961, green: 0.1098039216, blue: 0.1411764706, alpha: 1)), Color(#colorLiteral(red: 0.003921568627, green: 0.462745098, blue: 0.7647058824, alpha: 1)), Color(#colorLiteral(red: 0.4745098039, green: 0.1764705882, blue: 0.5725490196, alpha: 1))]
     let backgroundColors = [Color(#colorLiteral(red: 0.1921568627, green: 0.6392156863, blue: 0.2549019608, alpha: 1)), Color(#colorLiteral(red: 0.003921568627, green: 0.462745098, blue: 0.7647058824, alpha: 1)), Color(#colorLiteral(red: 1, green: 0.8235294118, blue: 0.01176470588, alpha: 1)), Color(#colorLiteral(red: 0.9254901961, green: 0.1098039216, blue: 0.1411764706, alpha: 1))]
@@ -19,10 +19,10 @@ struct ToddleTimeView: View {
                 .ignoresSafeArea()
         
             VStack {
-                Grid(viewModel.cards) { card in
+                Grid(game.cards) { card in
                     CardView(card: card).onTapGesture {
                         withAnimation(.linear(duration: 0.6)) {
-                            self.viewModel.choose(card: card)
+                            self.game.choose(card: card)
                         }
                     }
                     .padding(5)
@@ -37,13 +37,13 @@ struct ToddleTimeView: View {
                         Image(systemName: "gearshape")
                     }
                     .padding(.leading)
-                    .fullScreenCover(isPresented: $isPresented, onDismiss: { viewModel.resetGame() }, content: SettingsView.init)
+                    .fullScreenCover(isPresented: $isPresented, onDismiss: { game.resetGame() }, content: SettingsView.init)
                     
                     Spacer()
                     
                     Button(action: {
                         withAnimation(.easeInOut) {
-                            self.viewModel.resetGame()
+                            self.game.resetGame()
                         }
                     }) {
                         Image(systemName: "arrow.clockwise.circle")
@@ -161,7 +161,6 @@ struct SettingsView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ToddleTimeView(viewModel: ToddleTime())
+        ToddleTimeView(game: ToddleTime())
     }
 }
-
