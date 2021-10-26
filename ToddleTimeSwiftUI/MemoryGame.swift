@@ -44,7 +44,6 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
                     cardMatchesNeededToWin -= 1
                     
                     if cardMatchesNeededToWin == 0 {
-                        #warning("called on game win")
                         playSound("victorySound", withDelay: .now() + 0.55)
                     } else {
                         playSound("cardMatchSound", withDelay: .now() + 0.42)
