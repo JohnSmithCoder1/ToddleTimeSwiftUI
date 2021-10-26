@@ -88,7 +88,7 @@ struct SettingsView: View {
     @State private var selectedNumberOfCardPairsIndex = UserDefaults.standard.integer(forKey: "cardPairs")
     @State private var selectedCardImagesIndex = UserDefaults.standard.integer(forKey: "cardImages")
     @State private var selectedColorIndex = UserDefaults.standard.integer(forKey: "color")
-    @State private var isSoundOn = UserDefaults.standard.object(forKey: "isSoundOn") as? Bool ?? true
+    @State private var isSoundOn = UserDefaults.standard.bool(forKey: "isSoundOn")
             
     var body: some View {
         ZStack {
