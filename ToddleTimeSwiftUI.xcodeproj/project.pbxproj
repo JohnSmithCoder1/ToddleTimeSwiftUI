@@ -48,6 +48,9 @@
 		05CA681626518870003B83CD /* threeSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05CA67FB26518870003B83CD /* threeSound.wav */; };
 		05CA681726518870003B83CD /* twoSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05CA67FC26518870003B83CD /* twoSound.wav */; };
 		05CA681826518870003B83CD /* fiveSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05CA67FD26518870003B83CD /* fiveSound.wav */; };
+		05D6FDF82728825100D63066 /* cardMatchSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05D6FDF72728825100D63066 /* cardMatchSound.wav */; };
+		05D6FDFA2728825B00D63066 /* longVictorySound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05D6FDF92728825B00D63066 /* longVictorySound.wav */; };
+		05D6FDFD272898E900D63066 /* victorySound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05D6FDFC272898E900D63066 /* victorySound.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +97,9 @@
 		05CA67FB26518870003B83CD /* threeSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = threeSound.wav; sourceTree = "<group>"; };
 		05CA67FC26518870003B83CD /* twoSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = twoSound.wav; sourceTree = "<group>"; };
 		05CA67FD26518870003B83CD /* fiveSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fiveSound.wav; sourceTree = "<group>"; };
+		05D6FDF72728825100D63066 /* cardMatchSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardMatchSound.wav; sourceTree = "<group>"; };
+		05D6FDF92728825B00D63066 /* longVictorySound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = longVictorySound.wav; sourceTree = "<group>"; };
+		05D6FDFC272898E900D63066 /* victorySound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = victorySound.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,9 +167,12 @@
 			isa = PBXGroup;
 			children = (
 				05B487F32669D84B0035227B /* cardMatchPlaceholder.wav */,
-				05B487F52669E0D50035227B /* gameCompletePlaceholder.wav */,
-				05CA67F626518870003B83CD /* shuffleCards.wav */,
+				05D6FDF72728825100D63066 /* cardMatchSound.wav */,
 				05CA67F526518870003B83CD /* flipCard.wav */,
+				05B487F52669E0D50035227B /* gameCompletePlaceholder.wav */,
+				05D6FDF92728825B00D63066 /* longVictorySound.wav */,
+				05CA67F626518870003B83CD /* shuffleCards.wav */,
+				05D6FDFC272898E900D63066 /* victorySound.wav */,
 				05CA67EE26518870003B83CD /* Farm Sounds */,
 				05CA67DF26518870003B83CD /* Market Sounds */,
 				05CA67F726518870003B83CD /* Number Sounds */,
@@ -303,12 +312,14 @@
 			files = (
 				05CA67FF26518870003B83CD /* strawberrySound.wav in Resources */,
 				05CA681526518870003B83CD /* oneSound.wav in Resources */,
+				05D6FDFA2728825B00D63066 /* longVictorySound.wav in Resources */,
 				05CA680A26518870003B83CD /* diamondSound.wav in Resources */,
 				05CA681326518870003B83CD /* sixSound.wav in Resources */,
 				05B487F42669D84B0035227B /* cardMatchPlaceholder.wav in Resources */,
 				05CA680526518870003B83CD /* circleSound.wav in Resources */,
 				05CA681226518870003B83CD /* shuffleCards.wav in Resources */,
 				05CA680E26518870003B83CD /* dogSound.wav in Resources */,
+				05D6FDFD272898E900D63066 /* victorySound.wav in Resources */,
 				05CA680826518870003B83CD /* triangleSound.wav in Resources */,
 				051B58852634B645009FBA44 /* LaunchScreen.storyboard in Resources */,
 				05CA681426518870003B83CD /* fourSound.wav in Resources */,
@@ -331,6 +342,7 @@
 				05CA681726518870003B83CD /* twoSound.wav in Resources */,
 				05CA680D26518870003B83CD /* horseSound.wav in Resources */,
 				05CA680F26518870003B83CD /* chickenSound.wav in Resources */,
+				05D6FDF82728825100D63066 /* cardMatchSound.wav in Resources */,
 				05CA681626518870003B83CD /* threeSound.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
