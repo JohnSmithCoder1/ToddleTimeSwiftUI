@@ -13,7 +13,7 @@ struct ToddleTimeView: View {
     let cardColors = [Color(#colorLiteral(red: 1, green: 0.8235294118, blue: 0.01176470588, alpha: 1)), Color(#colorLiteral(red: 0.9254901961, green: 0.1098039216, blue: 0.1411764706, alpha: 1)), Color(#colorLiteral(red: 0.003921568627, green: 0.462745098, blue: 0.7647058824, alpha: 1)), Color(#colorLiteral(red: 0.4745098039, green: 0.1764705882, blue: 0.5725490196, alpha: 1))]
     let backgroundColors = [Color(#colorLiteral(red: 0.1921568627, green: 0.6392156863, blue: 0.2549019608, alpha: 1)), Color(#colorLiteral(red: 0.003921568627, green: 0.462745098, blue: 0.7647058824, alpha: 1)), Color(#colorLiteral(red: 1, green: 0.8235294118, blue: 0.01176470588, alpha: 1)), Color(#colorLiteral(red: 0.9254901961, green: 0.1098039216, blue: 0.1411764706, alpha: 1))]
     
-    var body: some View {
+    var body: some View { 
         ZStack {
             backgroundColors[UserDefaults.standard.integer(forKey: "color")]
                 .ignoresSafeArea()
@@ -37,6 +37,7 @@ struct ToddleTimeView: View {
                         Image(systemName: "gearshape")
                     }
                     .padding(.leading)
+                    .padding(.bottom)
                     .fullScreenCover(isPresented: $isPresented, onDismiss: { game.resetGame() }, content: SettingsView.init)
                     
                     Spacer()
@@ -49,6 +50,7 @@ struct ToddleTimeView: View {
                         Image(systemName: "arrow.clockwise.circle")
                     }
                     .padding(.trailing)
+                    .padding(.bottom)
                 }
                 .font(.system(.largeTitle).weight(.semibold))
                 .foregroundColor(cardColors[UserDefaults.standard.integer(forKey: "color")])
@@ -86,7 +88,7 @@ struct SettingsView: View {
     @State private var selectedNumberOfCardPairsIndex = UserDefaults.standard.integer(forKey: "cardPairs")
     @State private var selectedCardImagesIndex = UserDefaults.standard.integer(forKey: "cardImages")
     @State private var selectedColorIndex = UserDefaults.standard.integer(forKey: "color")
-    @State private var isSoundOn = UserDefaults.standard.object(forKey: "isSoundOn") as? Bool ?? true
+    @State private var isSoundOn = UserDefaults.standard.bool(forKey: "isSoundOn")
             
     var body: some View {
         ZStack {
@@ -131,9 +133,9 @@ struct SettingsView: View {
                         Text("Blue").tag(2)
                         Text("Purple").tag(3)
                     }
-                    .onChange(of: selectedColorIndex, perform: { (value) in
+                    .onChange(of: selectedColorIndex) { (value) in
                         UserDefaults.standard.set(value, forKey: "color")
-                    })
+                    }
                     .pickerStyle(SegmentedPickerStyle())
                     .padding()
                     
@@ -144,7 +146,7 @@ struct SettingsView: View {
                         .padding()
                 }
                 .foregroundColor(Color.white)
-                
+    
                 Spacer()
                 
                 Button(action: {
@@ -154,6 +156,7 @@ struct SettingsView: View {
                         .imageScale(.large)
                 }
                 .foregroundColor(Color.green)
+                .padding()
             }
         }
     }
