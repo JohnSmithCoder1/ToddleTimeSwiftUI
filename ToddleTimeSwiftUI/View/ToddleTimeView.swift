@@ -112,7 +112,7 @@ struct SettingsView: View {
                     .pickerStyle(SegmentedPickerStyle())
                     .padding()
                     
-                    Text("Content")
+                    Text("Images")
                     Picker(selection: $selectedCardImagesIndex, label: Text("Content")) {
                         Text("Animals").tag(0)
                         Text("Foods").tag(1)
