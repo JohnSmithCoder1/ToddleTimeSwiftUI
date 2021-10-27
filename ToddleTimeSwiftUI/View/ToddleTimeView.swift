@@ -10,8 +10,8 @@ import SwiftUI
 struct ToddleTimeView: View {
     @ObservedObject var game: ToddleTime
     @State private var isPresented = false
-    let cardColors = [Color(#colorLiteral(red: 1, green: 0.8235294118, blue: 0.01176470588, alpha: 1)), Color(#colorLiteral(red: 0.9254901961, green: 0.1098039216, blue: 0.1411764706, alpha: 1)), Color(#colorLiteral(red: 0.003921568627, green: 0.462745098, blue: 0.7647058824, alpha: 1)), Color(#colorLiteral(red: 0.4745098039, green: 0.1764705882, blue: 0.5725490196, alpha: 1))]
-    let backgroundColors = [Color(#colorLiteral(red: 0.1921568627, green: 0.6392156863, blue: 0.2549019608, alpha: 1)), Color(#colorLiteral(red: 0.003921568627, green: 0.462745098, blue: 0.7647058824, alpha: 1)), Color(#colorLiteral(red: 1, green: 0.8235294118, blue: 0.01176470588, alpha: 1)), Color(#colorLiteral(red: 0.9254901961, green: 0.1098039216, blue: 0.1411764706, alpha: 1))]
+    let cardColors = [Color(#colorLiteral(red: 1, green: 0.8235294118, blue: 0.01176470588, alpha: 1)), Color(#colorLiteral(red: 1, green: 0.5137254902, blue: 0, alpha: 1)), Color(#colorLiteral(red: 0.003921568627, green: 0.462745098, blue: 0.7647058824, alpha: 1)), Color(#colorLiteral(red: 0.4745098039, green: 0.1764705882, blue: 0.5725490196, alpha: 1))]
+    let backgroundColors = [Color(#colorLiteral(red: 0.1921568627, green: 0.6392156863, blue: 0.2549019608, alpha: 1)), Color(#colorLiteral(red: 0.003921568627, green: 0.462745098, blue: 0.7647058824, alpha: 1)), Color(#colorLiteral(red: 1, green: 0.8235294118, blue: 0.01176470588, alpha: 1)), Color(#colorLiteral(red: 1, green: 0.5137254902, blue: 0, alpha: 1))]
     
     var body: some View { 
         ZStack {
