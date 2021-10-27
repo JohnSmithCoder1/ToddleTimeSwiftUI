@@ -117,7 +117,7 @@ struct SettingsView: View {
                         Text("Animals").tag(0)
                         Text("Foods").tag(1)
                         Text("Shapes").tag(2)
-                        Text("Random").tag(3)
+                        Text("All").tag(3)
                     }
                     .onChange(of: selectedCardImagesIndex, perform: { (value) in
                         UserDefaults.standard.set(value, forKey: "cardImages")
