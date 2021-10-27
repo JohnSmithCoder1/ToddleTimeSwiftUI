@@ -129,7 +129,7 @@ struct SettingsView: View {
                     Text("Color")
                     Picker(selection: $selectedColorIndex, label: Text("Color")) {
                         Text("Yellow").tag(0)
-                        Text("Red").tag(1)
+                        Text("Orange").tag(1)
                         Text("Blue").tag(2)
                         Text("Purple").tag(3)
                     }
