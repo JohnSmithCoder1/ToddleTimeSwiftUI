@@ -113,7 +113,7 @@ struct SettingsView: View {
                     .padding()
                     
                     Text("Images")
-                    Picker(selection: $selectedCardImagesIndex, label: Text("Content")) {
+                    Picker(selection: $selectedCardImagesIndex, label: Text("Images")) {
                         Text("Animals").tag(0)
                         Text("Foods").tag(1)
                         Text("Shapes").tag(2)
