@@ -25,6 +25,7 @@ struct ToddleTimeView: View {
           }) {
             Image(systemName: "gearshape")
           }
+          .padding(.top)
           .padding(.leading)
           .sheet(isPresented: $isPresented, onDismiss: { game.resetGame() }, content: SettingsView.init)
           .font(.system(.title).weight(.semibold))
