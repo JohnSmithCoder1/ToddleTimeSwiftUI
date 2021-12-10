@@ -26,7 +26,7 @@ struct ToddleTimeView: View {
             Image(systemName: "gearshape")
           }
           .padding(.leading)
-          .fullScreenCover(isPresented: $isPresented, onDismiss: { game.resetGame() }, content: SettingsView.init)
+          .sheet(isPresented: $isPresented, onDismiss: { game.resetGame() }, content: SettingsView.init)
           .font(.system(.title).weight(.semibold))
           .foregroundColor(cardColors[UserDefaults.standard.integer(forKey: "color")])
           
@@ -92,6 +92,19 @@ struct SettingsView: View {
         .ignoresSafeArea()
       
       VStack {
+        HStack {
+          Button(action: {
+            presentationMode.wrappedValue.dismiss()
+          }) {
+            Image(systemName: "chevron.down")
+          }
+          .font(.system(.title).weight(.semibold))
+          .foregroundColor(Color.white)
+          .padding(20)
+          
+          Spacer()
+        }
+        
         Spacer()
         
         Group {
@@ -144,15 +157,7 @@ struct SettingsView: View {
         .foregroundColor(Color.white)
         
         Spacer()
-        
-        Button(action: {
-          presentationMode.wrappedValue.dismiss()
-        }) {
-          Image(systemName: "checkmark.circle")
-            .imageScale(.large)
-        }
-        .foregroundColor(Color.green)
-        .padding()
+        Spacer()
       }
     }
   }
@@ -161,5 +166,6 @@ struct SettingsView: View {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ToddleTimeView(game: ToddleTime())
+    SettingsView()
   }
 }
