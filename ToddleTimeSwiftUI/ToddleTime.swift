@@ -17,15 +17,30 @@ class ToddleTime: ObservableObject {
     let numberOfCardPairs = [3, 4, 5, 6]
     
     // Content
-    let animalImages = [Image("cowImageLarge"), Image("dogImageLarge"), Image("chickenImageLarge"), Image("pigImageLarge"), Image("horseImageLarge"), Image("catImageLarge")].shuffled()
+    let animalImages = [Image("cowImageLarge"),
+                        Image("dogImageLarge"),
+                        Image("chickenImageLarge"),
+                        Image("pigImageLarge"),
+                        Image("horseImageLarge"),
+                        Image("catImageLarge")]
     
-    let foodImages = [Image("appleImageLarge"), Image("bananaImageLarge"), Image("broccoliImageLarge"), Image("carrotImageLarge"), Image("pepperImageLarge"), Image("strawberryImageLarge")].shuffled()
+    let foodImages = [Image("appleImageLarge"),
+                      Image("bananaImageLarge"),
+                      Image("broccoliImageLarge"),
+                      Image("carrotImageLarge"),
+                      Image("pepperImageLarge"),
+                      Image("strawberryImageLarge")]
     
-    let shapeImages = [Image("circleImageLarge"), Image("squareImageLarge"), Image("triangleImageLarge"), Image("starImageLarge"), Image("diamondImageLarge"), Image("heartImageLarge")].shuffled()
+    let shapeImages = [Image("circleImageLarge"),
+                       Image("squareImageLarge"),
+                       Image("triangleImageLarge"),
+                       Image("starImageLarge"),
+                       Image("diamondImageLarge"),
+                       Image("heartImageLarge")]
     
-    let allImages = [Image("cowImageLarge"), Image("dogImageLarge"), Image("chickenImageLarge"), Image("pigImageLarge"), Image("horseImageLarge"), Image("catImageLarge"), Image("appleImageLarge"), Image("bananaImageLarge"), Image("broccoliImageLarge"), Image("carrotImageLarge"), Image("pepperImageLarge"), Image("strawberryImageLarge"), Image("circleImageLarge"), Image("squareImageLarge"), Image("triangleImageLarge"), Image("starImageLarge"), Image("diamondImageLarge"), Image("heartImageLarge")].shuffled()
+    let allImages = animalImages + foodImages + shapeImages
     
-    let cardImageSets = [allImages, animalImages, foodImages, shapeImages]
+    let cardImageSets = [allImages.shuffled(), animalImages.shuffled(), foodImages.shuffled(), shapeImages.shuffled()]
     
     return MemoryGame<Image>(numberOfPairsOfCards: numberOfCardPairs[UserDefaults.standard.integer(forKey: "cardPairs")]) { pairIndex in
       return cardImageSets[UserDefaults.standard.integer(forKey: "cardImages")][pairIndex]
