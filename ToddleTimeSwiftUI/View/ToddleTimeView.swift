@@ -110,10 +110,10 @@ struct SettingsView: View {
           
           Text("Images")
           Picker(selection: $selectedCardImagesIndex, label: Text("Images")) {
-            Text("Animals").tag(0)
-            Text("Foods").tag(1)
-            Text("Shapes").tag(2)
-            Text("All").tag(3)
+            Text("All").tag(0)
+            Text("Animals").tag(1)
+            Text("Foods").tag(2)
+            Text("Shapes").tag(3)
           }
           .onChange(of: selectedCardImagesIndex, perform: { (value) in
             UserDefaults.standard.set(value, forKey: "cardImages")

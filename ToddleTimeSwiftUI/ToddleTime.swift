@@ -25,7 +25,7 @@ class ToddleTime: ObservableObject {
     
     let allImages = [Image("cowImageLarge"), Image("dogImageLarge"), Image("chickenImageLarge"), Image("pigImageLarge"), Image("horseImageLarge"), Image("catImageLarge"), Image("appleImageLarge"), Image("bananaImageLarge"), Image("broccoliImageLarge"), Image("carrotImageLarge"), Image("pepperImageLarge"), Image("strawberryImageLarge"), Image("circleImageLarge"), Image("squareImageLarge"), Image("triangleImageLarge"), Image("starImageLarge"), Image("diamondImageLarge"), Image("heartImageLarge")].shuffled()
     
-    let cardImageSets = [animalImages, foodImages, shapeImages, allImages]
+    let cardImageSets = [allImages, animalImages, foodImages, shapeImages]
     
     return MemoryGame<Image>(numberOfPairsOfCards: numberOfCardPairs[UserDefaults.standard.integer(forKey: "cardPairs")]) { pairIndex in
       return cardImageSets[UserDefaults.standard.integer(forKey: "cardImages")][pairIndex]
