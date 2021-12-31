@@ -28,7 +28,7 @@ struct ToddleTimeView: View {
           .padding(.top)
           .padding(.leading)
           .sheet(isPresented: $isPresented, onDismiss: { game.resetGame() }, content: SettingsView.init)
-          .font(.system(.title).weight(.semibold))
+          .font(.system(.title))
           .foregroundColor(cardColors[UserDefaults.standard.integer(forKey: "color")])
           
           Spacer()
@@ -97,9 +97,9 @@ struct SettingsView: View {
           Button(action: {
             presentationMode.wrappedValue.dismiss()
           }) {
-            Image(systemName: "chevron.down")
+            Image(systemName: "xmark")
           }
-          .font(.system(.title).weight(.semibold))
+          .font(.system(.title))
           .foregroundColor(Color.white)
           .padding(20)
           
