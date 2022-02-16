@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,7 @@
 		05CA681226518870003B83CD /* shuffleCards.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05CA67F626518870003B83CD /* shuffleCards.wav */; };
 		05D6FDF82728825100D63066 /* cardMatchSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05D6FDF72728825100D63066 /* cardMatchSound.wav */; };
 		05D6FDFD272898E900D63066 /* victorySound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05D6FDFC272898E900D63066 /* victorySound.wav */; };
+		4B1CBFAD27BC857E004127F3 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4B1CBFAC27BC857E004127F3 /* ConfettiSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B1CBFAD27BC857E004127F3 /* ConfettiSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +158,9 @@
 			dependencies = (
 			);
 			name = ToddleTimeSwiftUI;
+			packageProductDependencies = (
+				4B1CBFAC27BC857E004127F3 /* ConfettiSwiftUI */,
+			);
 			productName = ToddleTimeSwiftUI;
 			productReference = 051B58752634B643009FBA44 /* ToddleTimeSwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -183,6 +188,9 @@
 				Base,
 			);
 			mainGroup = 051B586C2634B642009FBA44;
+			packageReferences = (
+				4B1CBFAB27BC857E004127F3 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+			);
 			productRefGroup = 051B58762634B643009FBA44 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -427,6 +435,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4B1CBFAB27BC857E004127F3 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4B1CBFAC27BC857E004127F3 /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B1CBFAB27BC857E004127F3 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 051B586D2634B642009FBA44 /* Project object */;
 }

@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import ConfettiSwiftUI
 
 struct ToddleTimeView: View {
   @ObservedObject var game: ToddleTime
   @State private var isPresented = false
+  @State var confettiCounter = 0
   let cardColors = [Color(#colorLiteral(red: 1, green: 0.8235294118, blue: 0.01176470588, alpha: 1)), Color(#colorLiteral(red: 1, green: 0.5137254902, blue: 0, alpha: 1)), Color(#colorLiteral(red: 0.003921568627, green: 0.462745098, blue: 0.7647058824, alpha: 1)), Color(#colorLiteral(red: 0.4745098039, green: 0.1764705882, blue: 0.5725490196, alpha: 1))]
   let backgroundColors = [Color(#colorLiteral(red: 0.1921568627, green: 0.6392156863, blue: 0.2549019608, alpha: 1)), Color(#colorLiteral(red: 0.003921568627, green: 0.462745098, blue: 0.7647058824, alpha: 1)), Color(#colorLiteral(red: 1, green: 0.8235294118, blue: 0.01176470588, alpha: 1)), Color(#colorLiteral(red: 1, green: 0.5137254902, blue: 0, alpha: 1))]
   
@@ -38,12 +40,22 @@ struct ToddleTimeView: View {
           CardView(card: card).onTapGesture {
             withAnimation(.linear(duration: 0.6)) {
               self.game.choose(card: card)
+              
+              if self.game.model.cardMatchesNeededToWin == 0 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                  confettiCounter += 1
+                }
+              }
             }
           }
           .padding(5)
         }
         .padding()
         .foregroundColor(cardColors[UserDefaults.standard.integer(forKey: "color")])
+      }
+      
+      ZStack {
+        ConfettiCannon(counter: $confettiCounter, num: 80, confettis: [.shape(.triangle)], confettiSize: 30, openingAngle: Angle.degrees(0), closingAngle: Angle.degrees(360), radius: 260)
       }
     }
     .onTapGesture(count: 1) {
