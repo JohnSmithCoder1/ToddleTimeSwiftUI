@@ -97,7 +97,7 @@ struct SettingsView: View {
           Button(action: {
             presentationMode.wrappedValue.dismiss()
           }) {
-            Image(systemName: "xmark")
+            Image(systemName: "chevron.down")
           }
           .font(.system(.title))
           .foregroundColor(Color.white)
