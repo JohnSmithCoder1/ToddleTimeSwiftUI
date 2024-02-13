@@ -6,12 +6,17 @@ Toddle Time is a free memory card game to help toddlers and kids improve their f
 
 ## Apple App Store ID
 
-* 1435097355
+* [1435097355](https://apps.apple.com/us/app/toddle-time/id1435097355)
 
 ## Built With
 
 * XCode 12.5.1
 * Swift 5.0
+
+## Built For
+
+* iPhone
+* iPad
 
 ## Requires
 
