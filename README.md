@@ -15,12 +15,9 @@ Toddle Time is a free memory card game to help toddlers and kids improve their f
 
 ## Built For
 
-* iPhone
-* iPad
-
-## Requires
-
-* iOS 14.4 and up
+* iPhone (requires iOS 14.1 or later)
+* iPad (requires iPadOS 14.1 or later)
+* Mac (requires macOS 11.0 or later and a Mac with Apple M1 chip or later)
 
 ## Author
 
