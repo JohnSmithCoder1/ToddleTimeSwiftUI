@@ -8,4 +8,4 @@ Toddle Time is committed to respecting and protecting individuals' privacy right
 * Toddle Time does not include access to the internet or contain any web links.
 * Toddle Time does not use email, phone, or webcam features inherent with smartphone or tablet devices.
 
-If you have any questions or concerns regarding privacy, please contact me at bananavikingcoder@gmail.com
+If you have any questions or concerns regarding privacy, please contact me at johnsmithcoder1@gmail.com
