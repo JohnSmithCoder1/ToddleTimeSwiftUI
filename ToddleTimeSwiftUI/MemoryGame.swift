@@ -58,18 +58,17 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     }
     
     mutating func playSound(_ soundFile: String, withDelay delay: DispatchTime = .now()) {
-        if UserDefaults.standard.bool(forKey: "isSoundOn") {
-            guard let path = Bundle.main.url(forResource: soundFile, withExtension: "wav") else { return }
-            do {
-                audioPlayer = try AVAudioPlayer(contentsOf: path)
-                guard let audioPlayer = audioPlayer else { return }
-                audioPlayer.prepareToPlay()
-                DispatchQueue.main.asyncAfter(deadline: delay) {
-                    audioPlayer.play()
-                }
-            } catch let error as NSError {
-                print("error: \(error.localizedDescription)")
+        guard let path = Bundle.main.url(forResource: soundFile, withExtension: "wav") else { return }
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: path)
+            guard let audioPlayer = audioPlayer else { return }
+            audioPlayer.prepareToPlay()
+            DispatchQueue.main.asyncAfter(deadline: delay) {
+                audioPlayer.play()
             }
+        } catch let error as NSError {
+            print("error: \(error.localizedDescription)")
         }
     }
     
