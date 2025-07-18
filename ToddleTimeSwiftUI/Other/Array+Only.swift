@@ -8,7 +8,7 @@
 import Foundation
 
 extension Array {
-  var oneAndOnly: Element? {
-    count == 1 ? first : nil
-  }
+    var oneAndOnly: Element? {
+        count == 1 ? first : nil
+    }
 }
